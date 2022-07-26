@@ -1,0 +1,20 @@
+{
+  "srcFiles": [
+    "./svg-icons/**/*.svg"
+  ],
+  "outputDirectory": "./dist/icons",
+  "interfaceName": "AmpIcon",
+  "typeName": "ampIcons",
+  "prefix": "ampIcon",
+  "svgoConfig": {
+    "plugins": [
+      "cleanupAttrs"
+    ]
+  },
+  "generateType": true,
+  "exportCompleteIconSet": true,
+  "optimizeForLazyLoading": true,
+  "fileName": "amp-icon.model",
+  "additionalModelFile": "./dist/icons",
+  "compileSources": true
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@bennyxguo/ui-icons-starter",
+  "version": "1.0.0",
+  "description": "Icon library for Design System",
+  "main": "dist/icons/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build:library": "npm run transform-icons && npm run copy-library-assets",
+    "build:showcase": "npm run build:library && npm run bundle-showcase && npm run copy-showcase-files",
+    "bundle-showcase": "webpack --config ./showcase/webpack.config.js --mode=production --node-env=production",
+    "commit": "git-cz",
+    "copy-showcase-files": "cpx showcase/styles.css dist/showcase",
+    "copy-library-assets": "cpx package.json dist/icons && cpx README.md dist/icons",
+    "transform-icons": "svg-to-ts-files",
+    "serve": "npm run build:showcase && http-server ./dist/showcase -o",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennyxguo/ui-icons-starter"
+  },
+  "keywords": [
+    "SVG",
+    "icons",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/bennyxguo/ui-icons-starter/issues"
+  },
+  "homepage": "https://github.com/bennyxguo/ui-icons-starter#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@webpack-cli/generators": "^2.5.0",
+    "babel-loader": "^8.2.5",
+    "cpx": "^1.5.0",
+    "git-cz": "^4.9.0",
+    "html-webpack-plugin": "^5.5.0",
+    "npm-run-all": "^4.1.5",
+    "svg-to-ts": "^8.8.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}
